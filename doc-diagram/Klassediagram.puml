@@ -1,0 +1,86 @@
+@startuml
+
+!pragma layout smetana
+
+class Quiz
+class Player
+class Question
+class Database
+class TextUI
+
+TextUI --> Quiz
+
+Quiz *-- Player
+Quiz o-- Question
+
+Database ..> Question
+note right of Question
+   Question has 4. options
+   gemt i array
+end note
+
+
+class Database {
+- String DB_URL
++ startDatabase()
+- insertQuestions(Connection conn)
++ getQuestionById(int id) Question
++ getTotalQuestions() int
+}
+
+class Player {
+- int id
+- int score
+- String playername
++ Player(int id, int score, String playername)
++ getId() int
++ getScore() int
++ getPlayername() String
++ setId(int id)
++ setScore(int score)
++ setPlayername(String playername)
+}
+
+class Question {
+- int id
+- String question
+- String[] options
+- int correctAnswer
+- String category
+- String explanation
++ Question(int id, String question, String[] options, int correctAnswer)
++ getId() int
++ getQuestion() String
++ getOptions() String[]
++ getCorrectAnswer() int
++ getCategory() String
++ getExplanation() String
+}
+
+class Quiz {
+- Player player
+- List<Question> questions
+- int currentQuestionIndex
++ Quiz(Player player)
++ loadQuestions()
++ start()
++ nextQuestion()
++ submitAnswer(int answer)
++ calculateScore() int
++ showResults()
+}
+
+class TextUI {
+- Scanner scanner
+- Quiz quiz
++ TextUI()
++ run()
+- welcomeMsg()
+- getPlayerName() String
+- displayQuestion(Question question)
+- getUserAnswer() int
+- displayResult(boolean correct, Question question)
+- displayFinalScore()
+}
+
+@enduml

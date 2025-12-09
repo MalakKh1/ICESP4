@@ -1,0 +1,32 @@
+@startuml
+!pragma layout smetana
+
+object Quiz
+object Question
+object Answer
+object Score
+object UserResponse
+object Category
+object User
+
+' Komposition - Quiz består af Questions
+Quiz *-- Question
+
+' Komposition - Question består af Answers
+Question *-- Answer
+
+' Association - Quiz tracker Score
+Quiz -- Score
+
+' Association - Question tilhører Category
+Question -- Category
+
+' Association - Question modtager UserResponse
+Question -- UserResponse
+
+' Dependency - DatabaseManager håndterer data
+User ..> Quiz
+User ..> Question
+User ..> Answer
+
+@enduml
