@@ -1,6 +1,5 @@
 # ICESP4
 Java quiz med database official
-SP4
 ICE Projekt Funktionelle krav - Java Quiz App
 
 Formål Systemet skal hjælpe studerende med at opfriske deres viden fra 1. semester Java programmering gennem en interaktiv quiz. Aktører Spilleren= En studerende der vil teste sin viden om Java programmering.
