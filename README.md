@@ -45,7 +45,7 @@ Afslutning
 
 - Efter alle spørgsmål skal systemet vise resultatet
 - Systemet skal give en vurdering baseret på score:
-  8/10: "Fantastisk! Du er en Java-vogter!"
-  6/10: "Godt klaret! Du har styr på det!"
-  4/10: "Mid besvarelse! Øv dig lidt mere!"
-  1/3: "Tid til genopfriskning!"
+  * 10/10: "Fantastisk! Du er en Java-vogter!"
+  * 8/10: "Godt klaret! Du har styr på det!"
+  * 5/10: "Mid besvarelse! Øv dig lidt mere!"
+  * 0-4/10: "Hvornår var du sidst til undervisningen? Lol"
