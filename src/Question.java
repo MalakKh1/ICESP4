@@ -1,3 +1,4 @@
+package util;
 // Repræsenter quiz med multiple choice spg
 public class Question {
     private int id;

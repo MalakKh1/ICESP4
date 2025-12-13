@@ -5,20 +5,11 @@ public class Database {
     private static final String DB_URL = "jdbc:sqlite:java_quiz.db";
 
     public static void startDatabase() {
-        // Tjek om SQLite driver er loaded
-        try {
-            Class.forName("org.sqlite.JDBC");
-            System.out.println("✓ SQLite driver loaded successfully!");
-        } catch (ClassNotFoundException e) {
-            System.err.println("✗ FEJL: SQLite driver ikke fundet!");
-            System.err.println("Du skal tilføje sqlite-jdbc JAR til projektet.");
-            return;
-        }
 
         try (Connection conn = DriverManager.getConnection(DB_URL);
              Statement stmt = conn.createStatement()) {
 
-            System.out.println("✓ Database forbindelse oprettet!");
+           // System.out.println("✓ Database forbindelse oprettet!");
 
             String createTableSQL = """
                 CREATE TABLE IF NOT EXISTS questions (
@@ -40,7 +31,7 @@ public class Database {
             if (rs.next() && rs.getInt(1) == 0) {
                 insertSampleQuestions(conn);
             } else {
-                System.out.println("✓ Database har allerede spørgsmål");
+          //      System.out.println("✓ Database har allerede spørgsmål");
             }
 
         } catch (SQLException e) {

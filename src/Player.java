@@ -1,4 +1,5 @@
-// Represents a user of the quiz system
+package util;
+// Represents a user of te quiz system
 public class Player {
 
     private int id;// Unique user ID
