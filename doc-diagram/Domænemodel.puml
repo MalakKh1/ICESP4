@@ -9,19 +9,19 @@ object UserResponse
 object Category
 object User
 
-' Komposition - Quiz består af Questions
+' Komposition - domain.Quiz består af Questions
 Quiz *-- Question
 
-' Komposition - Question består af Answers
+' Komposition - domain.Question består af Answers
 Question *-- Answer
 
-' Association - Quiz tracker Score
+' Association - domain.Quiz tracker Score
 Quiz -- Score
 
-' Association - Question tilhører Category
+' Association - domain.Question tilhører Category
 Question -- Category
 
-' Association - Question modtager UserResponse
+' Association - domain.Question modtager UserResponse
 Question -- UserResponse
 
 ' Dependency - DatabaseManager håndterer data

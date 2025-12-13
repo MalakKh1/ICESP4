@@ -1,4 +1,5 @@
-package Util;
+package util;
+import domain.*;
 
 import java.util.Scanner;
 
@@ -122,21 +123,22 @@ public class TextUI {
         System.out.println("\n═══════════════════════════════════════");
         System.out.println("         QUIZ AFSLUTTET!              ");
         System.out.println("═══════════════════════════════════════");
-        System.out.println("Spiller: " + player.getPlayername());
-        System.out.println("Score: " + player.getScore() + "/" + totalQuestions);
+        System.out.println("Spiller: " + player.getPlayername() + ", scorede: "+ player.getScore() + "/" + totalQuestions + " point i alt!");
+        //System.out.println("Score: " + player.getScore() + "/" + totalQuestions);
 
-        double percentage = (double) player.getScore() / totalQuestions * 100;
-        System.out.printf("Procent: %.1f%%\n", percentage);
+        /*double percentage = (double) player.getScore() / totalQuestions * 100;
+        System.out.printf("Procent: %.1f%%\n", percentage);*/
 
+        int score = player.getScore();
         // Give feedback based on score
-        if (percentage >= 90) {
-            System.out.println("\n Fantastisk! Du er en Java vogter!");
-        } else if (percentage >= 70) {
-            System.out.println("\n Godt klaret! Du har styr på det!");
-        } else if (percentage >= 50) {
-            System.out.println("\n Mid besvarelse! Øv lidt mere!");
+        if (score == 10) {
+            System.out.println("\nFantastisk! Du er en Java vogter!");
+        } else if (score >= 8) {
+            System.out.println("\nGodt klaret! Du har styr på det!");
+        } else if (score >= 5) {
+            System.out.println("\nMid besvarelse! Øv lidt mere!");
         } else {
-            System.out.println("\nTid til genopfriskning!");
+            System.out.println("\nHvornår var du sidst til undervisningen? Lol");
         }
 
     }
