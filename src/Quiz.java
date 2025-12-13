@@ -1,4 +1,4 @@
-// Manages quiz logic and question flow
+
 public class Quiz {
     private Player player;
     private int currentQuestionId;
@@ -6,22 +6,22 @@ public class Quiz {
 
     public Quiz(Player player) {
         this.player = player;
-        this.currentQuestionId = 1; // Start from question ID 1
+        this.currentQuestionId = 1; // Start fra Question ID 1
         this.totalQuestions = Database.getTotalQuestions();
     }
 
-    // Load the next question from database
+    // Loader næste spg
     public Question loadNextQuestion() {
         if (currentQuestionId > totalQuestions) {
-            return null; // No more questions
+            return null; // stopper med returner spg
         }
 
         Question question = Database.getQuestionById(currentQuestionId);
-        currentQuestionId++; // Move to next question ID
+        currentQuestionId++; // Videre til næste spg ID
         return question;
     }
 
-    // Check if the user's answer is correct and update score
+    // Check om bruger svare rigtigt og dernæst opdater score
     public boolean checkAnswer(int userAnswer, Question question) {
         boolean correct = (userAnswer == question.getCorrectAnswer());
 
@@ -32,12 +32,12 @@ public class Quiz {
         return correct;
     }
 
-    // Check if all questions have been answered
+    // Checker om alle spg er svaret
     public boolean isQuizComplete() {
         return currentQuestionId > totalQuestions;
     }
 
-    // Get the player object
+    // Get the player object?
     public Player getPlayer() {
         return player;
     }

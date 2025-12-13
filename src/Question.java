@@ -1,4 +1,4 @@
-// Represents a quiz question with multiple choice options
+// Repræsenter quiz med multiple choice spg
 public class Question {
     private int id;
     private String question;
@@ -7,7 +7,7 @@ public class Question {
     private String category;
     private String explanation;
 
-    // Constructor with all fields
+    // Constructor mede ALLE fields
     public Question(int id, String question, String[] options, int correctAnswer, String category, String explanation) {
         this.id = id;
         this.question = question;

@@ -2,7 +2,7 @@ package Util;
 
 import java.util.Scanner;
 
-// Handles all user interaction and console communication
+// tager sig af alt ineratktion med bruger og consol kommunikation
 public class TextUI {
     private Scanner scanner;
     private Quiz quiz;
@@ -11,7 +11,7 @@ public class TextUI {
         this.scanner = new Scanner(System.in);
     }
 
-    // Main method to run the quiz application
+    // Main metode til at run quiz applikator
     public void run() {
         welcomeMsg();
 
@@ -19,11 +19,11 @@ public class TextUI {
         String playerName = getPlayerName();
         Player player = new Player(1, 0, playerName);
 
-        // Create quiz and start
+        // Create quiz og start
         quiz = new Quiz(player);
         playQuiz();
 
-        // Show final results
+        // Vis final results
         displayFinalScore();
 
         scanner.close();
@@ -42,7 +42,7 @@ public class TextUI {
         System.out.println("\nLad os starte quizzen!");
         System.out.println("───────────────────────────────────────\n");
 
-        // Loop through all questions
+        // Loop gennem alle spg
         while (!quiz.isQuizComplete()) {
             Question question = quiz.loadNextQuestion();
 
@@ -54,7 +54,7 @@ public class TextUI {
             // Display question and options
             displayQuestion(question);
 
-            // Get user's answer
+            // Get user answer
             int userAnswer = getUserAnswer();
 
             // Check if answer is correct
@@ -97,7 +97,7 @@ public class TextUI {
                 }
             } else {
                 System.out.println("Ugyldig input. Indtast et tal.");
-                scanner.nextLine(); // Clear invalid input
+                scanner.nextLine(); // ryder invalid input
             }
         }
 
