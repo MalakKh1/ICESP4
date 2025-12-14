@@ -62,12 +62,10 @@ class Quiz {
 - List<Question> questions
 - int currentQuestionIndex
 + Quiz(Player player)
-+ loadQuestions()
-+ start()
-+ nextQuestion()
-+ submitAnswer(int answer)
-+ calculateScore() int
-+ showResults()
++ loadNextQuestion()
++ boolean checkAnswer(int userAnswer, Question question)
++ boolean isQuizComplete()
++ getPlayer()
 }
 
 class TextUI {
@@ -77,6 +75,7 @@ class TextUI {
 + run()
 - welcomeMsg()
 - getPlayerName() String
+- playQuiz()
 - displayQuestion(Question question)
 - getUserAnswer() int
 - displayResult(boolean correct, Question question)

@@ -123,8 +123,8 @@ public class TextUI {
         System.out.println("\n═══════════════════════════════════════");
         System.out.println("         QUIZ AFSLUTTET!              ");
         System.out.println("═══════════════════════════════════════");
-        System.out.println("Spiller: " + player.getPlayername() + ", scorede: "+ player.getScore() + "/" + totalQuestions + " point i alt!");
-        //System.out.println("Score: " + player.getScore() + "/" + totalQuestions);
+        System.out.println("Spiller: " + player.getPlayername()); //+, scorede: "+ player.getScore() + "/" + totalQuestions + " point i alt!");
+        System.out.println("Din Score: " + player.getScore() + "/" + totalQuestions);
 
         /*double percentage = (double) player.getScore() / totalQuestions * 100;
         System.out.printf("Procent: %.1f%%\n", percentage);*/
