@@ -130,7 +130,7 @@ public class TextUI {
 
         // Give feedback based on score
         int score = player.getScore();
-        // Give feedback based on score
+        
         if (score == 10) {
             System.out.println("\nFantastisk! Du er en Java vogter!");
         } else if (score >= 8) {
