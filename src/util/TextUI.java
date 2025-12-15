@@ -139,6 +139,9 @@ public class TextUI {
             System.out.println("\nTid til genopfriskning!");
         }
 
+        HighscoreManager.saveScore(player.getPlayername(), player.getScore(), totalQuestions);
+        System.out.println(); // Ekstra linje
+        HighscoreManager.displayHighscores();
     }
 
 }
