@@ -1,4 +1,3 @@
-package util;
 // Represents a user of te quiz system
 public class Player {
 
