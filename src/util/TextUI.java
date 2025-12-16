@@ -2,6 +2,12 @@ package util;
 
 import java.util.Scanner;
 
+import domain.Database;
+import domain.Player;
+import domain.Question;
+import domain.Quiz;
+
+
 // tager sig af alt ineratktion med bruger og consol kommunikation
 public class TextUI {
     private Scanner scanner;
@@ -119,9 +125,9 @@ public class TextUI {
         Player player = quiz.getPlayer();
         int totalQuestions = Database.getTotalQuestions();
 
-        System.out.println("\n═══════════════════════════════════════");
+        System.out.println("\n───────────────────────────────────────");
         System.out.println("         QUIZ AFSLUTTET!              ");
-        System.out.println("═══════════════════════════════════════");
+        System.out.println("───────────────────────────────────────\n");
         System.out.println("Spiller: " + player.getPlayername());
         System.out.println("Score: " + player.getScore() + "/" + totalQuestions);
 
@@ -130,7 +136,7 @@ public class TextUI {
 
         // Give feedback based on score
         int score = player.getScore();
-        
+
         if (score == 10) {
             System.out.println("\nFantastisk! Du er en Java vogter!");
         } else if (score >= 8) {
@@ -141,9 +147,6 @@ public class TextUI {
             System.out.println("\nHvornår var du sidst til undervisningen? Lol");
         }
 
-        HighscoreManager.saveScore(player.getPlayername(), player.getScore(), totalQuestions);
-        System.out.println(); // Ekstra linje
-        HighscoreManager.displayHighscores();
     }
 
 }
