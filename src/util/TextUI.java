@@ -2,6 +2,12 @@ package util;
 
 import java.util.Scanner;
 
+import domain.Database;
+import domain.Player;
+import domain.Question;
+import domain.Quiz;
+
+
 // tager sig af alt ineratktion med bruger og consol kommunikation
 public class TextUI {
     private Scanner scanner;
@@ -30,7 +36,7 @@ public class TextUI {
     }
 
     private void welcomeMsg() {
-        System.out.println("Velkommen til Java Quiz Spillet!   \n");
+        System.out.println("Velkommen til Java domain.Quiz Spillet!   \n");
     }
 
     private String getPlayerName() {
@@ -119,9 +125,9 @@ public class TextUI {
         Player player = quiz.getPlayer();
         int totalQuestions = Database.getTotalQuestions();
 
-        System.out.println("\n═══════════════════════════════════════");
+        System.out.println("\n───────────────────────────────────────");
         System.out.println("         QUIZ AFSLUTTET!              ");
-        System.out.println("═══════════════════════════════════════");
+        System.out.println("───────────────────────────────────────\n");
         System.out.println("Spiller: " + player.getPlayername());
         System.out.println("Score: " + player.getScore() + "/" + totalQuestions);
 
@@ -129,14 +135,16 @@ public class TextUI {
         System.out.printf("Procent: %.1f%%\n", percentage);
 
         // Give feedback based on score
-        if (percentage >= 90) {
-            System.out.println("\n Fantastisk! Du er en Java vogter!");
-        } else if (percentage >= 70) {
-            System.out.println("\n Godt klaret! Du har styr på det!");
-        } else if (percentage >= 50) {
-            System.out.println("\n Mid besvarelse! Øv lidt mere!");
+        int score = player.getScore();
+
+        if (score == 10) {
+            System.out.println("\nFantastisk! Du er en Java vogter!");
+        } else if (score >= 8) {
+            System.out.println("\nGodt klaret! Du har styr på det!");
+        } else if (score >= 5) {
+            System.out.println("\nMid besvarelse! Øv lidt mere!");
         } else {
-            System.out.println("\nTid til genopfriskning!");
+            System.out.println("\nHvornår var du sidst til undervisningen? Lol");
         }
 
     }

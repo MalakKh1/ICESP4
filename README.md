@@ -1,6 +1,6 @@
 # ICESP4
 Java quiz med database official
-ICE Projekt Funktionelle krav - Java Quiz App
+ICE Projekt Funktionelle krav - Java domain.Quiz App
 
 Formål 
 
@@ -9,18 +9,18 @@ Systemet skal hjælpe studerende med at opfriske deres viden fra 1. semester Jav
 - Spilleren: En person med et navn og en score.
 - Spilleren besvarer spørgsmål og optjener point for korrekte svar.
 - Spørgsmål: Består af en spørgsmålstekst, 4 svarmuligheder (1, 2, 3, 4) og ét korrekt svar.
-- Spørgsmålene handler om Java emner fra 1. semester. Quiz: Selve spillet, der styrer flowet.
+- Spørgsmålene handler om Java emner fra 1. semester. domain.Quiz: Selve spillet, der styrer flowet.
 - Indeholder 10 spørgsmål som præsenteres for en ad gangen. 
 
 Relationer
 
-- En Quiz har én Spiller
-- En Quiz består af 10 Spørgsmål
+- En domain.Quiz har én Spiller
+- En domain.Quiz består af 10 Spørgsmål
 - Et Spørgsmål har præcis 4 svarmuligheder
 - Et Spørgsmål har præcis ét korrekt svar
 - En Spiller giver ét svar per Spørgsmål.
 
-- Quiz flow: 1. Spilleren indtaster navn -> Quizzen starter -> Spørgsmål vises ét ad gangen random -> Spilleren vælger svar (1-4) -> Systemet tjekker svaret -> Feedback gives -> Score opdateres -> Næste spørgsmål vises -> til sidst vises endelig resultat.
+- domain.Quiz flow: 1. Spilleren indtaster navn -> Quizzen starter -> Spørgsmål vises ét ad gangen random -> Spilleren vælger svar (1-4) -> Systemet tjekker svaret -> Feedback gives -> Score opdateres -> Næste spørgsmål vises -> til sidst vises endelig resultat.
 - Scoring: Spilleren starter på 0 point. Hvert korrekt svar giver 1 point. Forkerte svar giver 0 point. Score vises løbende efter hvert spørgsmål.
 - Validering: Kun input 1, 2, 3 eller 4 accepteres som svar.
 
@@ -38,7 +38,7 @@ Funktionalitet af Spørgsmål og svar
 - Efter alle spørgsmål vises den endelige score
 
 
-Quiz skal indeholde 5-10 spørgsmål om emner fra 1. semester:
+domain.Quiz skal indeholde 5-10 spørgsmål om emner fra 1. semester:
 Variabler og datatyper + Løkker (for, while) + If-statements + Arrays og ArrayList + Metoder Klasser og objekter Scanner
 
 Afslutning
