@@ -1,4 +1,3 @@
-package util;
 public class Quiz {
     private Player player;
     private int currentQuestionId;
